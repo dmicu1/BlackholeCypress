@@ -8,5 +8,6 @@ describe('Practicar con Cypress', () => {
   })
   it('TC2-Verificar la seccion de ejemplos', () => {
     cy.get('#basicpagetest').click()
+    cy.get('#para1').should('have.text','A paragraph of text')
   })
 })
