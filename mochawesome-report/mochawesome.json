@@ -1,0 +1,140 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-01-19T11:48:57.826Z",
+    "end": "2024-01-19T11:49:07.494Z",
+    "duration": 9668,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7d8fd248-f112-46ec-8760-7bfa81abf581",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Tests\\Elements\\GX3-1274-TextBox.cy.js",
+      "file": "cypress\\e2e\\Tests\\Elements\\GX3-1274-TextBox.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d6beb28f-0436-4480-94ad-fe5b937a68c7",
+          "title": "GX3-1274-tools-qa-elements-text-box-fill-form-and-submit",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "|TC1|  Validar formulario llenando correctamente todos los campos",
+              "fullTitle": "GX3-1274-tools-qa-elements-text-box-fill-form-and-submit |TC1|  Validar formulario llenando correctamente todos los campos",
+              "timedOut": null,
+              "duration": 3799,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"data/GX3-1274-TextBox\").then((data) => {\n  cy.get(\"#userName-wrapper input\").type(data.validCredentials.FullName);\n});\ncy.get(\"#userEmail-wrapper input\").type(validCredentials.Email);\ncy.get(\"#userEmail-wrapper input\").should(\"have.value\", validCredentials.Email);\ncy.get(\"#currentAddress-wrapper textarea\").type(validCredentials.CurrentAddress);\ncy.get(\"#currentAddress-wrapper textarea\").should(\"have.value\", validCredentials.CurrentAddress);\ncy.get(\"#permanentAddress-wrapper textarea\").type(validCredentials.PermanentAddress);\ncy.get(\"#permanentAddress-wrapper textarea\").should(\"have.value\", validCredentials.PermanentAddress);\ncy.get(\"#submit\").click();\ncy.get(\"#output #name\").invoke(\"text\").then((name) => {\n  cy.log(name);\n});\ncy.get(\"#output #name\").invoke(\"text\").as(\"name\");\ncy.get(\"#output #email\").invoke(\"text\").as(\"email\");\ncy.get(\"#output #currentAddress\").invoke(\"text\").as(\"currentAddress\");\ncy.get(\"#output #permanentAddress\").invoke(\"text\").as(\"permanentAddress\");\ncy.then(() => {\n  expect(getRealValue(this.name)).equal(validCredentials.FullName);\n  expect(getRealValue(this.email)).equal(validCredentials.Email);\n  expect(getRealValue(this.currentAddress)).equal(validCredentials.CurrentAddress);\n  expect(getRealValue(this.permanentAddress)).equal(validCredentials.PermanentAddress);\n});",
+              "err": {},
+              "uuid": "62c3a9b7-11a4-4f24-9330-4167d9a8d20b",
+              "parentUUID": "d6beb28f-0436-4480-94ad-fe5b937a68c7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "|TC2| Validar NO poder rellenar formulario con Email invalido",
+              "fullTitle": "GX3-1274-tools-qa-elements-text-box-fill-form-and-submit |TC2| Validar NO poder rellenar formulario con Email invalido",
+              "timedOut": null,
+              "duration": 3782,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const invalidEmails = [\n  invalidCredentialsForEmail.Email0,\n  invalidCredentialsForEmail.Email1,\n  invalidCredentialsForEmail.Email2,\n  invalidCredentialsForEmail.Email3,\n  invalidCredentialsForEmail.Email4\n];\nfor (const email of invalidEmails) {\n  cy.get(\"#userEmail-wrapper input\").type(email);\n  cy.get(\"#userEmail-wrapper input\").should(\"have.value\", email);\n  cy.get(\"#submit\").click();\n  cy.get(\".field-error\").should(\"be.visible\");\n  cy.get(\".mr-sm-2.field-error.form-control\").should(\"have.css\", \"border-color\", \"rgb(255, 0, 0)\");\n  cy.get(\"#userEmail-wrapper input\").clear();\n  cy.get(\"#userEmail-wrapper input\").should(\"be.empty\");\n}",
+              "err": {},
+              "uuid": "43f5b87d-35e5-4640-a201-8557796ea06e",
+              "parentUUID": "d6beb28f-0436-4480-94ad-fe5b937a68c7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "|TC3| Validar NO poder rellenar formulario con campos vacíos",
+              "fullTitle": "GX3-1274-tools-qa-elements-text-box-fill-form-and-submit |TC3| Validar NO poder rellenar formulario con campos vacíos",
+              "timedOut": null,
+              "duration": 1955,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#userName-wrapper input\").clear();\ncy.get(\"#userName-wrapper input\").should(\"be.empty\");\ncy.get(\"#userEmail-wrapper input\").clear();\ncy.get(\"#userEmail-wrapper input\").should(\"be.empty\");\ncy.get(\"#currentAddress-wrapper textarea\").clear();\ncy.get(\"#currentAddress-wrapper textarea\").should(\"be.empty\");\ncy.get(\"#permanentAddress-wrapper textarea\").clear();\ncy.get(\"#permanentAddress-wrapper textarea\").should(\"be.empty\");\ncy.get(\"#submit\").click();\ncy.get(\".border\").should(\"not.exist\");",
+              "err": {},
+              "uuid": "8cc747ab-a745-4dae-8dda-cf754148766b",
+              "parentUUID": "d6beb28f-0436-4480-94ad-fe5b937a68c7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "62c3a9b7-11a4-4f24-9330-4167d9a8d20b",
+            "43f5b87d-35e5-4640-a201-8557796ea06e",
+            "8cc747ab-a745-4dae-8dda-cf754148766b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9536,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

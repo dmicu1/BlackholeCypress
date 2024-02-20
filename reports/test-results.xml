@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.668" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-01-19T11:48:57" tests="0" file="cypress\e2e\Tests\Elements\GX3-1274-TextBox.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="GX3-1274-tools-qa-elements-text-box-fill-form-and-submit" timestamp="2024-01-19T11:48:57" tests="3" time="9.641" failures="0">
+    <testcase name="|TC1|  Validar formulario llenando correctamente todos los campos" time="3.799" classname="GX3-1274-tools-qa-elements-text-box-fill-form-and-submit |TC1|  Validar formulario llenando correctamente todos los campos">
+    </testcase>
+    <testcase name="|TC2| Validar NO poder rellenar formulario con Email invalido" time="3.782" classname="GX3-1274-tools-qa-elements-text-box-fill-form-and-submit |TC2| Validar NO poder rellenar formulario con Email invalido">
+    </testcase>
+    <testcase name="|TC3| Validar NO poder rellenar formulario con campos vacíos" time="1.955" classname="GX3-1274-tools-qa-elements-text-box-fill-form-and-submit |TC3| Validar NO poder rellenar formulario con campos vacíos">
+    </testcase>
+  </testsuite>
+</testsuites>
