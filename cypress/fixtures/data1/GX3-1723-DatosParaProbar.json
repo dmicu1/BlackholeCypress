@@ -1,0 +1,13 @@
+{
+	"credencialesValidasAgregarEmpleado": {
+		"FirstName": "Daniel",
+		"MiddleName": "Florinel",
+		"LastName": "Micu",
+		"EmployeeId": "1234567891"
+	},
+	"credencialesValidasRegistrarEmpleado": {
+		"UserName": "Daniel15",
+		"Password": "Florinel1@",
+		"ConfirmPassword": "Florinel1@"
+	}
+}
